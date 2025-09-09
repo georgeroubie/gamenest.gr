@@ -9,7 +9,6 @@ import {
   Github,
   Mail,
   Moon,
-  Music2,
   PartyPopper,
   Rocket,
   Sparkles,
@@ -82,11 +81,11 @@ export default function GameNestLanding() {
             </a>
 
             <nav className="hidden sm:flex items-center gap-6 text-sm text-muted-foreground">
+              <a href="#about" className="hover:text-foreground">
+                Σχετικά
+              </a>
               <a href="#projects" className="hover:text-foreground">
                 Εφαρμογές
-              </a>
-              <a href="#about" className="hover:text-foreground">
-                Ποιοι είμαστε
               </a>
               <a href="#contact" className="hover:text-foreground">
                 Επικοινωνία
@@ -94,7 +93,13 @@ export default function GameNestLanding() {
             </nav>
 
             <div className="flex items-center gap-2">
-              <Button variant="ghost" size="icon" aria-label="Εναλλαγή θέματος" onClick={() => setDark(!dark)}>
+              <Button
+                className="cursor-pointer"
+                variant="ghost"
+                size="icon"
+                aria-label="Εναλλαγή θέματος"
+                onClick={() => setDark(!dark)}
+              >
                 {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </Button>
               <Button asChild>
@@ -121,28 +126,25 @@ export default function GameNestLanding() {
                 Καλώς ήρθες στη <span className="text-primary">GameNest</span>
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
-                Μια φωλιά (nest) δημιουργών που αγαπά τα party games και τις εμπειρίες για παρέες. Από την Παντομίμα
-                μέχρι το Παλερμο, χτίζουμε διασκεδαστικούς, καλοσχεδιασμένους τίτλους.
+                Μια φωλιά (nest) γεμάτη παιχνίδια και εμπειρίες για παρέες, σχεδιασμένα από ανθρώπους που αγαπούν τα
+                party games.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Button asChild size="lg">
                   <a href="#projects">Δες τις εφαρμογές</a>
                 </Button>
-                <Button asChild variant="outline" size="lg">
-                  <a href="#contact">Θέλω συνεργασία</a>
-                </Button>
               </div>
-              <div className="mt-6 flex items-center gap-3 text-sm text-muted-foreground">
-                <Badge variant="secondary" className="px-3 py-1">
-                  iOS & Android
-                </Badge>
+              {/* <div className="mt-6 flex items-center gap-3 text-sm text-muted-foreground">
                 <Badge variant="secondary" className="px-3 py-1">
                   Web Ready
                 </Badge>
                 <Badge variant="secondary" className="px-3 py-1">
-                  Greek & EN
+                  Χωρίς εγκατάσταση
                 </Badge>
-              </div>
+                <Badge variant="secondary" className="px-3 py-1">
+                  Γρήγορες
+                </Badge>
+              </div> */}
             </motion.div>
 
             <motion.div
@@ -164,22 +166,15 @@ export default function GameNestLanding() {
                       </div>
                     </CardContent>
                   </Card>
-                  <Card>
-                    <CardContent className="p-5">
-                      <div className="flex items-center gap-2 font-semibold">
-                        <Music2 className="w-5 h-5" />
-                        Karaoke mode
+                  <Card className="col-span-2">
+                    <CardContent className="p-5 flex items-center gap-3">
+                      <div className="p-3 rounded-2xl bg-primary/10 text-primary">
+                        <Users className="w-6 h-6" />
                       </div>
-                      <p className="text-sm text-muted-foreground mt-1">Ειδικό για ΠΑΡΤΥ στην Παντομίμα.</p>
-                    </CardContent>
-                  </Card>
-                  <Card>
-                    <CardContent className="p-5">
-                      <div className="flex items-center gap-2 font-semibold">
-                        <Users className="w-5 h-5" />
-                        Για μικρές & μεγάλες παρέες
+                      <div>
+                        <p className="font-semibold">Για μικρές & μεγάλες παρέες</p>
+                        <p className="text-sm text-muted-foreground">Κλίμακα 4–20+ ατόμων.</p>
                       </div>
-                      <p className="text-sm text-muted-foreground mt-1">Κλίμακα 4–20+ ατόμων.</p>
                     </CardContent>
                   </Card>
                 </div>
@@ -198,13 +193,13 @@ export default function GameNestLanding() {
             />
             <Feature
               icon={<Gamepad2 className="w-5 h-5" />}
-              title="Gameplay > όλα"
-              text="Σχεδιάζουμε με προτεραιότητα την εμπειρία της παρέας και την επανάληψη."
+              title="Gameplay"
+              text="Σχεδιάζουμε με προτεραιότητα την εμπειρία της παρέας."
             />
             <Feature
               icon={<Sparkles className="w-5 h-5" />}
               title="Καθαρός σχεδιασμός"
-              text="Μινιμαλιστικά UI, ελληνικά κείμενα, προσβάσιμες ροές."
+              text="Μινιμαλιστικά UI, ελληνικά κείμενα και εύκολα στη χρήση."
             />
           </div>
         </section>
@@ -372,13 +367,11 @@ export default function GameNestLanding() {
             </Card>
           </div>
         </section>
-
-        {/* Footer */}
         <footer className="border-t">
           <div className="max-w-6xl mx-auto px-4 py-10 text-sm text-muted-foreground flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <Bird className="w-4 h-4" />
-              <span>© {new Date().getFullYear()} GameNest. Όλα τα δικαιώματα διατηρούνται.</span>
+              <span>© {new Date().getFullYear()} GameNest</span>
             </div>
             <div className="flex items-center gap-4">
               <a href="#about" className="hover:text-foreground">

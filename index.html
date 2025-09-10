@@ -1,11 +1,54 @@
 <!doctype html>
-<html lang="en">
+<html lang="%VITE_DEFAULT_LANGUAGE%">
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GameNest | Φτιάχνουμε παιχνίδια για να φέρνουμε τους ανθρώπους πιο κοντά</title>
+
+  <!-- PWA -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" sizes="180x180">
+  <link rel="mask-icon" href="/maskable-icon-512x512.png" color="#%VITE_THEME_COLOR%">
+  <meta name="theme-color" content="#%VITE_THEME_COLOR%">
+
+  <!-- Cookiebot -->
+  <!-- <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="%VITE_COOKIE_BOT%"
+    data-blockingmode="auto" type="text/javascript"></script> -->
+
+  <!-- Google Search Console -->
+  <!-- <meta name="google-site-verification" content="%VITE_GOOGLE_SITE_VERIFICATION%" /> -->
+
+  <!-- Google Tag Manager -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GOOGLE_TAG_MANAGER%"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', '%VITE_GOOGLE_TAG_MANAGER%');
+  </script> -->
+  <!-- End Google Tag Manager -->
+
+  <!-- Title -->
+  <title>%VITE_APP_NAME%</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="%VITE_APP_NAME%">
+  <meta name="description" content="%VITE_APP_DESCRIPTION%">
+
+  <!-- Open Graph / Facebook Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="%VITE_PUBLIC_URL%">
+  <meta property="og:title" content="%VITE_APP_NAME%">
+  <meta property="og:description" content="%VITE_APP_DESCRIPTION%">
+  <meta property="og:image" content="%VITE_PUBLIC_URL%/pwa-512x512.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="%VITE_PUBLIC_URL%">
+  <meta property="twitter:title" content="%VITE_APP_NAME%">
+  <meta property="twitter:description" content="%VITE_APP_DESCRIPTION%">
+  <meta property="twitter:image" content="%VITE_PUBLIC_URL%/pwa-512x512.png">
 </head>
 
 <body>

@@ -2,19 +2,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { motion } from 'framer-motion';
-import {
-  Bird,
-  ExternalLink,
-  Gamepad2,
-  Github,
-  Mail,
-  Moon,
-  PartyPopper,
-  Rocket,
-  Sparkles,
-  Sun,
-  Users,
-} from 'lucide-react';
+import { Bird, Drama, ExternalLink, Gamepad2, Github, Mail, Moon, Rocket, Sparkles, Sun, Users } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 const projects = [
@@ -22,16 +10,15 @@ const projects = [
     name: 'Παντομίμα',
     slug: 'pantomima',
     url: 'https://pantomima.app',
-    description:
-      'Το απόλυτο party game για παρέες! Με θεματικές κατηγορίες και λειτουργία Karaoke Party για έξτρα γέλιο.',
-    tags: ['Party', 'Charades', 'Karaoke'],
-    icon: <PartyPopper className="w-5 h-5" aria-hidden />,
+    description: 'Το απόλυτο party game για παρέες! Με πολλές κατηγορίες, ντουντούνισμα και παιδική έκδοση.',
+    tags: ['Party', 'Charades', 'Kids'],
+    icon: <Drama className="w-5 h-5" aria-hidden />,
   },
   {
     name: 'Παλερμο',
     slug: 'palermo',
     url: 'https://playpalermo.gr',
-    description: 'Κλασικό κοινωνικό deduction με ρόλους, μυστικές ψηφοφορίες και ένταση μέχρι το τέλος.',
+    description: 'Κλασικό παιχνίδι με ρόλους, μυστικές ψηφοφορίες, ένταση μέχρι το τέλος και αφηγητή.',
     tags: ['Social Deduction', 'Classic'],
     icon: <Users className="w-5 h-5" aria-hidden />,
   },

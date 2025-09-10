@@ -72,7 +72,7 @@ export default function GameNestLanding() {
                 Σχετικά
               </a>
               <a href="#projects" className="hover:text-foreground">
-                Εφαρμογές
+                Παιχνίδια
               </a>
               <a href="#contact" className="hover:text-foreground">
                 Επικοινωνία
@@ -140,32 +140,32 @@ export default function GameNestLanding() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="relative"
             >
-              <div className="relative rounded-3xl border bg-card p-6 shadow-lg">
-                <div className="grid grid-cols-2 gap-4">
-                  <Card className="col-span-2">
-                    <CardContent className="p-5 flex items-center gap-3">
-                      <div className="p-3 rounded-2xl bg-primary/10 text-primary">
-                        <Gamepad2 className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <p className="font-semibold">Party-first σχεδιασμός</p>
-                        <p className="text-sm text-muted-foreground">Γρήγορη εκμάθηση, γέλιο στο λεπτό.</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                  <Card className="col-span-2">
-                    <CardContent className="p-5 flex items-center gap-3">
-                      <div className="p-3 rounded-2xl bg-primary/10 text-primary">
-                        <Users className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <p className="font-semibold">Για μικρές & μεγάλες παρέες</p>
-                        <p className="text-sm text-muted-foreground">Κλίμακα 4–20+ ατόμων.</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
+              {/* <div className="relative rounded-3xl border bg-card p-6 shadow-lg"> */}
+              <div className="grid grid-cols-2 gap-4">
+                <Card className="col-span-2">
+                  <CardContent className="p-5 flex items-center gap-3">
+                    <div className="p-3 rounded-2xl bg-primary/10 text-primary">
+                      <Gamepad2 className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">Party-first σχεδιασμός</p>
+                      <p className="text-sm text-muted-foreground">Γρήγορη εκμάθηση, γέλιο στο λεπτό.</p>
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card className="col-span-2">
+                  <CardContent className="p-5 flex items-center gap-3">
+                    <div className="p-3 rounded-2xl bg-primary/10 text-primary">
+                      <Users className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">Για μικρές & μεγάλες παρέες</p>
+                      <p className="text-sm text-muted-foreground">Κλίμακα 4–20+ ατόμων.</p>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
+              {/* </div> */}
             </motion.div>
           </div>
         </section>
@@ -365,7 +365,7 @@ export default function GameNestLanding() {
                 Σχετικά
               </a>
               <a href="#projects" className="hover:text-foreground">
-                Εφαρμογές
+                Παιχνίδια
               </a>
               <a href="#contact" className="hover:text-foreground">
                 Επικοινωνία

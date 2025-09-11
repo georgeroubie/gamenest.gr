@@ -1,4 +1,4 @@
-import{r}from"./react.0.2.0.js";/**
+import{r}from"./react.0.3.0.js";/**
  * @license lucide-react v0.543.0 - ISC
  *
  * This source code is licensed under the ISC license.

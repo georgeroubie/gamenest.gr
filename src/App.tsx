@@ -41,12 +41,17 @@ const Feature = ({ icon, title, text }: { icon: React.ReactNode; title: string; 
 );
 
 export default function GameNestLanding() {
-  const [dark, setDark] = useState<boolean>(localStorage.getItem('gamenest-theme') === 'dark');
+  const saved = localStorage.getItem('gamenest-theme');
+  const [dark, setDark] = useState<boolean>(saved === 'dark');
 
   useEffect(() => {
-    const saved = localStorage.getItem('gamenest-theme');
-    if (saved) setDark(saved === 'dark');
-  }, []);
+    if (saved) {
+      setDark(saved === 'dark');
+      return;
+    }
+
+    setDark(true);
+  }, [saved]);
 
   useEffect(() => {
     localStorage.setItem('gamenest-theme', dark ? 'dark' : 'light');

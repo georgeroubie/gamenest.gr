@@ -1,3 +1,4 @@
+import { CONSTANTS } from './constants';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -6,9 +7,11 @@ import {
   Bird,
   Drama,
   ExternalLink,
+  Facebook,
   Gamepad2,
-  Github,
   HatGlasses,
+  Instagram,
+  Linkedin,
   Mail,
   MicVocal,
   Moon,
@@ -18,8 +21,6 @@ import {
   Users,
 } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
-
-// import { CONSTANTS } from './constants';
 
 const projects = [
   {
@@ -214,7 +215,7 @@ export default function GameNestLanding() {
         <section className="max-w-6xl mx-auto px-4 pt-20 pb-8" id="projects">
           <div className="flex items-end justify-between mb-6">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">Οι εφαρμογές μας</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">Παιχνίδια</h2>
               <p className="text-muted-foreground">Ζωντανά και υπό ανάπτυξη projects της GameNest.</p>
             </div>
             <Badge className="h-7" variant="secondary">
@@ -297,7 +298,7 @@ export default function GameNestLanding() {
             </div>
           </div>
         </section> */}
-        <section className="max-w-6xl mx-auto px-4 pb-24" id="contact">
+        {/* <section className="max-w-6xl mx-auto px-4 pb-24" id="contact">
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-2xl font-bold">Επικοινωνία</h3>
@@ -371,6 +372,65 @@ export default function GameNestLanding() {
               </CardContent>
             </Card>
           </div>
+        </section> */}
+        <section className="max-w-6xl mx-auto px-4 pb-24" id="contact">
+          <h2 className="text-2xl font-bold mb-4">Επικοινωνία</h2>
+          <p className="text-muted-foreground mb-6">
+            Συνδέσου μαζί μας στα social ή στείλε μας email, θα χαρούμε πολύ να μιλήσουμε!
+          </p>
+
+          <div className="flex flex-wrap gap-4 items-center">
+            <a
+              href={`mailto:${CONSTANTS.EMAIL}`}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border hover:bg-muted transition"
+            >
+              <Mail className="w-4 h-4" />
+              Email
+            </a>
+            <a
+              href={CONSTANTS.FACEBOOK_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border hover:bg-muted transition"
+            >
+              <Facebook className="w-4 h-4" />
+              Facebook
+            </a>
+            <a
+              href={CONSTANTS.INSTAGRAM_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border hover:bg-muted transition"
+            >
+              <Instagram className="w-4 h-4" />
+              Instagram
+            </a>
+            <a
+              href={CONSTANTS.LINKEDIN_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border hover:bg-muted transition"
+            >
+              <Linkedin className="w-4 h-4" />
+              LinkedIn
+            </a>
+          </div>
+          <Card className="mt-16 shadow-lg">
+            <CardContent className="p-8 text-center">
+              <p className="text-xl font-semibold mb-4">
+                Αν σου αρέσει αυτό που φτιάχνουμε, μπορείς να μας κεράσεις έναν καφέ ☕
+              </p>
+              <a href={CONSTANTS.DONATION} target="_blank" rel="noreferrer">
+                <img
+                  src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                  width={171}
+                  height={48}
+                  alt="Buy me a coffee"
+                  className="mx-auto hover:scale-105 transition-transform"
+                />
+              </a>
+            </CardContent>
+          </Card>
         </section>
         <footer className="border-t">
           <div className="max-w-6xl mx-auto px-4 py-10 text-sm text-muted-foreground flex flex-col md:flex-row items-center justify-between gap-4">

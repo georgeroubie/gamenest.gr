@@ -2,8 +2,24 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { motion } from 'framer-motion';
-import { Bird, Drama, ExternalLink, Gamepad2, Github, Mail, Moon, Rocket, Sparkles, Sun, Users } from 'lucide-react';
+import {
+  Bird,
+  Drama,
+  ExternalLink,
+  Gamepad2,
+  Github,
+  HatGlasses,
+  Mail,
+  MicVocal,
+  Moon,
+  Rocket,
+  Sparkles,
+  Sun,
+  Users,
+} from 'lucide-react';
 import React, { useEffect, useState } from 'react';
+
+// import { CONSTANTS } from './constants';
 
 const projects = [
   {
@@ -11,7 +27,7 @@ const projects = [
     slug: 'pantomima',
     url: 'https://pantomima.app',
     description: 'Το απόλυτο party game για παρέες! Με πολλές κατηγορίες, ντουντούνισμα και παιδική έκδοση.',
-    tags: ['Party', 'Charades', 'Kids'],
+    tags: ['Party Game', 'Charades', 'Family Friendly'],
     icon: <Drama className="w-5 h-5" aria-hidden />,
   },
   {
@@ -19,8 +35,17 @@ const projects = [
     slug: 'palermo',
     url: 'https://playpalermo.gr',
     description: 'Κλασικό παιχνίδι με ρόλους, μυστικές ψηφοφορίες, ένταση μέχρι το τέλος και αφηγητή.',
-    tags: ['Social Deduction', 'Classic'],
-    icon: <Users className="w-5 h-5" aria-hidden />,
+    tags: ['Social Deduction', 'Roleplay', 'Strategy'],
+    icon: <HatGlasses className="w-5 h-5" aria-hidden />,
+  },
+  {
+    name: 'Καραόκε πάρτι',
+    slug: 'karaokeparty',
+    url: 'https://pantomima.app/karaoke-party',
+    description:
+      'Διασκέδασε με την παρέα σου τραγουδώντας τις αγαπημένες σας επιτυχίες! Ιδανικό για πάρτι, βραδιές με φίλους ή οικογενειακές συγκεντρώσεις.',
+    tags: ['Music', 'Singing', 'Party Vibes'],
+    icon: <MicVocal className="w-5 h-5" aria-hidden />,
   },
 ];
 
@@ -41,24 +66,31 @@ const Feature = ({ icon, title, text }: { icon: React.ReactNode; title: string; 
 );
 
 export default function GameNestLanding() {
-  const saved = localStorage.getItem('gamenest-theme');
-  const [dark, setDark] = useState<boolean>(saved === 'dark');
+  const [dark, setDark] = useState<boolean>(localStorage.getItem('gamenest-theme') === 'dark');
 
   useEffect(() => {
-    if (saved) {
-      setDark(saved === 'dark');
-      return;
+    const saved = localStorage.getItem('gamenest-theme');
+    const isDark = saved === 'dark';
+    setDark(isDark);
+
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
+  }, []);
 
-    setDark(true);
-  }, [saved]);
-
-  useEffect(() => {
-    localStorage.setItem('gamenest-theme', dark ? 'dark' : 'light');
-  }, [dark]);
+  function onThemeChange() {
+    if (dark) {
+      localStorage.removeItem('gamenest-theme');
+    } else {
+      localStorage.setItem('gamenest-theme', 'dark');
+    }
+    window.location.reload();
+  }
 
   return (
-    <div className={dark ? 'dark' : ''}>
+    <div>
       <div className="min-h-screen bg-background text-foreground antialiased selection:bg-primary/20">
         <header className="sticky top-0 z-40 bg-background/80 backdrop-blur border-b">
           <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -90,7 +122,7 @@ export default function GameNestLanding() {
                 variant="ghost"
                 size="icon"
                 aria-label="Εναλλαγή θέματος"
-                onClick={() => setDark(!dark)}
+                onClick={onThemeChange}
               >
                 {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </Button>
@@ -102,7 +134,6 @@ export default function GameNestLanding() {
             </div>
           </div>
         </header>
-
         <section className="relative overflow-hidden">
           <div className="absolute inset-0 -z-10">
             <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-primary/10 blur-3xl" />
@@ -126,26 +157,13 @@ export default function GameNestLanding() {
                   <a href="#projects">Δες τις εφαρμογές</a>
                 </Button>
               </div>
-              {/* <div className="mt-6 flex items-center gap-3 text-sm text-muted-foreground">
-                <Badge variant="secondary" className="px-3 py-1">
-                  Web Ready
-                </Badge>
-                <Badge variant="secondary" className="px-3 py-1">
-                  Χωρίς εγκατάσταση
-                </Badge>
-                <Badge variant="secondary" className="px-3 py-1">
-                  Γρήγορες
-                </Badge>
-              </div> */}
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="relative"
             >
-              {/* <div className="relative rounded-3xl border bg-card p-6 shadow-lg"> */}
               <div className="grid grid-cols-2 gap-4">
                 <Card className="col-span-2">
                   <CardContent className="p-5 flex items-center gap-3">
@@ -170,13 +188,11 @@ export default function GameNestLanding() {
                   </CardContent>
                 </Card>
               </div>
-              {/* </div> */}
             </motion.div>
           </div>
         </section>
-
-        {/* Features */}
-        <section className="max-w-6xl mx-auto px-4 py-16" id="about">
+        <section className="max-w-6xl mx-auto px-4 pt-20" id="about">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">Σχετικά</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Feature
               icon={<Rocket className="w-5 h-5" />}
@@ -195,10 +211,10 @@ export default function GameNestLanding() {
             />
           </div>
         </section>
-        <section className="max-w-6xl mx-auto px-4 pb-8" id="projects">
+        <section className="max-w-6xl mx-auto px-4 pt-20 pb-8" id="projects">
           <div className="flex items-end justify-between mb-6">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold">Οι εφαρμογές μας</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">Οι εφαρμογές μας</h2>
               <p className="text-muted-foreground">Ζωντανά και υπό ανάπτυξη projects της GameNest.</p>
             </div>
             <Badge className="h-7" variant="secondary">
@@ -242,8 +258,7 @@ export default function GameNestLanding() {
             ))}
           </div>
         </section>
-
-        <section className="max-w-6xl mx-auto px-4 py-16">
+        {/* <section className="max-w-6xl mx-auto px-4 py-16">
           <div className="rounded-3xl border bg-card overflow-hidden">
             <div className="grid md:grid-cols-2">
               <div className="p-8 md:p-10">
@@ -281,9 +296,7 @@ export default function GameNestLanding() {
               </div>
             </div>
           </div>
-        </section>
-
-        {/* Contact */}
+        </section> */}
         <section className="max-w-6xl mx-auto px-4 pb-24" id="contact">
           <div className="grid md:grid-cols-2 gap-8">
             <div>

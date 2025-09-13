@@ -140,7 +140,7 @@ export default function GameNestLanding() {
             <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-primary/10 blur-3xl" />
             <div className="absolute -bottom-24 -right-24 w-80 h-80 rounded-full bg-primary/10 blur-3xl" />
           </div>
-          <div className="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-10 items-center">
+          <div className="max-w-6xl mx-auto px-4 pt-20 grid md:grid-cols-2 gap-10 items-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs text-muted-foreground mb-4">
                 <Sparkles className="w-4 h-4" />
@@ -212,7 +212,7 @@ export default function GameNestLanding() {
             />
           </div>
         </section>
-        <section className="max-w-6xl mx-auto px-4 pt-20 pb-8" id="projects">
+        <section className="max-w-6xl mx-auto px-4 pt-20" id="projects">
           <div className="flex items-end justify-between mb-6">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-2">Παιχνίδια</h2>
@@ -373,7 +373,7 @@ export default function GameNestLanding() {
             </Card>
           </div>
         </section> */}
-        <section className="max-w-6xl mx-auto px-4 pb-24" id="contact">
+        <section className="max-w-6xl mx-auto px-4 pb-24 pt-20" id="contact">
           <h2 className="text-2xl font-bold mb-4">Επικοινωνία</h2>
           <p className="text-muted-foreground mb-6">
             Συνδέσου μαζί μας στα social ή στείλε μας email, θα χαρούμε πολύ να μιλήσουμε!
@@ -418,7 +418,7 @@ export default function GameNestLanding() {
           <Card className="mt-16 shadow-lg">
             <CardContent className="p-8 text-center">
               <p className="text-xl font-semibold mb-4">
-                Αν σου αρέσει αυτό που φτιάχνουμε, μπορείς να μας κεράσεις έναν καφέ ☕
+                Αν σου αρέσουν αυτά που φτιάχνουμε, μπορείς να μας κεράσεις έναν καφέ ☕
               </p>
               <a href={CONSTANTS.DONATION} target="_blank" rel="noreferrer">
                 <img
